@@ -5,6 +5,7 @@ class Application:
         pass
 
     def main(self):
+        dataseturl = "./dataset.csv"
         print("Let me know oaea ")
 
 
