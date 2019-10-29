@@ -1,6 +1,8 @@
 class Application:
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+    def importDataset(self,url):
+        pass
 
     def main(self):
         print("Let me know oaea ")
