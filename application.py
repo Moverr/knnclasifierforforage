@@ -8,6 +8,10 @@ class Application:
 
     def main(self):
         dataseturl = "./dataset.csv"
+        names = ['Height', 'Weight', 'Age', 'Gender']
+        dataset = pandas.read_csv(dataseturl, names=names)
+
+
         print("Panda Version  :  {}".format(pd.__version__))
         print("Let me know oaea ")
 
