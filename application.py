@@ -8,7 +8,7 @@ class Application:
 
     def main(self):
         dataseturl = "./dataset.csv"
-        print("VErsion {}".format(pd.version))
+        print("Panda Version  :  {}".format(pd.__version__))
         print("Let me know oaea ")
 
 
