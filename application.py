@@ -1,3 +1,5 @@
+import pandas as pd
+
 class Application:
     def __init__(self):
         pass
@@ -6,6 +8,7 @@ class Application:
 
     def main(self):
         dataseturl = "./dataset.csv"
+        print("VErsion {}".format(pd.version))
         print("Let me know oaea ")
 
 
