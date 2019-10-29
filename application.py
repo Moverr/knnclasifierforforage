@@ -9,7 +9,7 @@ class Application:
     def main(self):
         dataseturl = "./dataset.csv"
         names = ['Height', 'Weight', 'Age', 'Gender']
-        dataset = pandas.read_csv(dataseturl, names=names)
+        dataset = pd.read_csv(dataseturl, names=names)
 
 
         print("Panda Version  :  {}".format(pd.__version__))
