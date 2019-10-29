@@ -11,6 +11,8 @@ class Application:
         names = ['Height', 'Weight', 'Age', 'Gender']
         dataset = pd.read_csv(dataseturl, names=names)
 
+        print("Data set {} ".format(dataset[:10]))
+
 
         print("Panda Version  :  {}".format(pd.__version__))
         print("Let me know oaea ")
