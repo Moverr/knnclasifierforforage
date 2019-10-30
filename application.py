@@ -10,14 +10,14 @@ class Application:
     def __init__(self):
         self.names = ['Height', 'Weight', 'Gender']
          
-    def importDataset(self,url):
-        self.dataset = pd.read_csv(url,usecols=[0,1,2], names=self.names)
+    def importDataset(self,url,names):
+        self.dataset = pd.read_csv(url,usecols=[0,1,2], names=names)
 
          
 
     def main(self):
         dataseturl = "./dataset.csv"
-        self.importDataset(dataseturl)
+        self.importDataset(dataseturl,self.names)
 
         
         resultnames = ['AgeGroup']
