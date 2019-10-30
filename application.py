@@ -10,6 +10,8 @@ class Application:
     def __init__(self):
         pass
     def importDataset(self,url):
+        self.dataset = pd.read_csv(dataseturl,usecols=[0,1,2], names=names)
+
         pass
 
     def main(self):
@@ -19,7 +21,7 @@ class Application:
         names = ['Height', 'Weight', 'Gender']
         resultnames = ['AgeGroup']
         
-        dataset = pd.read_csv(dataseturl,usecols=[0,1,2], names=names)
+      
 
         # record set 
         resultdataset = pd.read_csv(dataseturl,usecols=[3], names=resultnames)
