@@ -14,6 +14,8 @@ class Application:
 
     def main(self):
         dataseturl = "./dataset.csv"
+        self.importDataset(dataseturl)
+
         names = ['Height', 'Weight', 'Gender']
         resultnames = ['AgeGroup']
         
