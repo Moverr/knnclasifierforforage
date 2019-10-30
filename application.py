@@ -2,6 +2,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 from sklearn.neighbors  import KNeighborsClassifier
+import numpy as np
+
 
 
 class Application:
@@ -35,9 +37,15 @@ class Application:
         # K Nearest Neighborhood 
         knn = KNeighborsClassifier(n_neighbors = 1)
 
-        knn.fit(x_train[:5],y_train[:5])
+        knn.fit(x_train,y_train)
 
-        print(" :::: {}".format(knn))
+        x_new = np.array([[161.29,48.987936,1]])
+        
+        prediction  = knn.predict(x_new)
+
+
+        ageGroup = np.array(['Child','Teen','Adult'])
+        print(" Prediction {}".format(ageGroup[prediction]))
 
 
 
