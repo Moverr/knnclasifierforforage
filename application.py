@@ -16,12 +16,12 @@ def splitTrainingData(dataset,resultdataset):
     x_train, x_test, y_train, y_test = train_test_split(dataset,resultdataset,random_state = 0)
     return  x_train, x_test, y_train, y_test
 
-def knnClassifier(dataset,resultdataset):
+def knnClassifier(dataset,resultdataset,newdataset):
     x_train, x_test, y_train, y_test =  splitTrainingData(dataset,resultdataset)
     knn = KNeighborsClassifier(n_neighbors=1)
     knn.fit(x_train, y_train)
-    x_new = np.array([[161.29, 48.987936, 1]])
-    return knn.predict(x_new)
+    
+    return knn.predict(newdataset)
 
 def main():
     names = ['Height', 'Weight', 'Gender']
@@ -35,8 +35,11 @@ def main():
 
     print("Result data set \n {} ".format(resultdataset[:20]))
 
-    result  = knnClassifier(dataset,resultdataset)
+    newDataset = np.array([[161.29, 48.987936, 1]])
+    
+    result  = knnClassifier(dataset,resultdataset,newDataset)
+    
     print("Result : {} ".format(result))
- 
+    
  
 main()
