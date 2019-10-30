@@ -1,6 +1,9 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
+from sklearn.neighbors  import KNeighborsClassifier
+
+
 class Application:
     def __init__(self):
         pass
@@ -29,7 +32,16 @@ class Application:
 # split data using sklean
         x_train,x_test,y_train,y_test = train_test_split(dataset,resultdataset,random_state = 0)
 
+        # K Nearest Neighborhood 
+        knn = KNeighborsClassifier(n_neighbors = 1)
+
+
+
+
         print("X train {}".format(y_train))
+
+ 
+
 
 
 
