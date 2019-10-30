@@ -30,7 +30,7 @@ def main():
     dataset = importDataset(dataseturl, names)
     resultdataset =  importResultsDataset(dataseturl,resultnames)
 
-    # print("Data set \n {} ".format(dataset[:10]))
+    print("Data set \n {} ".format(dataset[:10]))
 
 #         print("Result data set \n {} ".format(resultdataset[:20]))
 
