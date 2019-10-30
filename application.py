@@ -3,7 +3,9 @@ from sklearn.model_selection import train_test_split
 
 from sklearn.neighbors import KNeighborsClassifier
 import numpy as np
+
  
+
 def importDataset( url, names):
     dataset = pd.read_csv(url, usecols=[0, 1, 2], names=names)
     return dataset
@@ -36,10 +38,17 @@ def main():
     print("Result data set \n {} ".format(resultdataset[:20]))
 
     newDataset = np.array([[161.29, 48.987936, 1]])
-    
-    result  = knnClassifier(dataset,resultdataset,newDataset)
-    
-    print("Result : {} ".format(result))
-    
+    result  = knnClassifier(dataset,resultdataset,newDataset)    
+    targetNames = np.array(['child','Teen','Adult'])  
+    print("Result : {} ".format(targetNames[result]))
+
+
+
+    newDataset = np.array([[113.665, 17.463292, 1]])
+    result  = knnClassifier(dataset,resultdataset,newDataset)     
+    print("Result : {} ".format(targetNames[result]))
+
+
+ 
  
 main()
