@@ -27,7 +27,9 @@ class Application:
 
 
 # split data using sklean
-    x_train,x_test,y_train,y_test = train_test_split(dataset,resultdataset,random_state = 0)
+        x_train,x_test,y_train,y_test = train_test_split(dataset,resultdataset,random_state = 0)
+
+        print("X train {}".format(y_train))
 
 
 
