@@ -8,8 +8,8 @@ class Application:
 
     def main(self):
         dataseturl = "./dataset.csv"
-        names = ['Height', 'Weight', 'Gender',"AgeGroup"]
-        dataset = pd.read_csv(dataseturl, names=names)
+        names = ['Height', 'Weight', 'Gender']
+        dataset = pd.read_csv(dataseturl,usecols=[0,1,2], names=names)
 
         print("Data set \n {} ".format(dataset[:10]))
 
