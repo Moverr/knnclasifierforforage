@@ -35,16 +35,7 @@ def main():
 
     print("Result data set \n {} ".format(resultdataset[:20]))
 
-  
-
-# # split data using sklean
-        prediction = splitTrainingData()
-
-#         # K Nearest Neighborhood
-
-        # ageGroup = np.array(['Child','Teen','Adult'])
-        # print(" Prediction {}".format(ageGroup[prediction]))
-
-
+    result  = knnClassifier(dataset,resultdataset)
+ 
  
 main()
