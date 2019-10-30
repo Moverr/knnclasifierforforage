@@ -8,17 +8,18 @@ import numpy as np
 
 class Application:
     def __init__(self):
-        pass
+        self.names = ['Height', 'Weight', 'Gender']
+         
     def importDataset(self,url):
-        self.dataset = pd.read_csv(dataseturl,usecols=[0,1,2], names=names)
+        self.dataset = pd.read_csv(url,usecols=[0,1,2], names=self.names)
 
-        pass
+         
 
     def main(self):
         dataseturl = "./dataset.csv"
         self.importDataset(dataseturl)
 
-        names = ['Height', 'Weight', 'Gender']
+        
         resultnames = ['AgeGroup']
         
       
