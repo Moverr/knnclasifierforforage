@@ -35,12 +35,14 @@ class Application:
         # K Nearest Neighborhood 
         knn = KNeighborsClassifier(n_neighbors = 1)
 
+        knn.fit(x_train[:5],y_train[:5])
+
+        print(" :::: {}".format(knn))
 
 
 
-        print("X train {}".format(y_train))
 
- 
+  
 
 
 
