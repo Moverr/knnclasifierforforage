@@ -8,8 +8,7 @@ import numpy as np
 
 class Application:
     def __init__(self):
-        self.names = ['Height', 'Weight', 'Gender']
-        self.resultnames = ['AgeGroup']
+        pass
          
     def importDataset(self,url,names):
         self.dataset = pd.read_csv(url,usecols=[0,1,2], names=names)
@@ -20,9 +19,19 @@ class Application:
     def splitTrainingData(self):
         self.x_train,self.x_test,self.y_train,self.y_test = train_test_split(self.dataset,self.resultdataset,random_state = 0)
 
+    def knnClassifier(self):
+        knn = KNeighborsClassifier(n_neighbors = 1) 
+        knn.fit(self.x_train,self.y_train)
+        x_new = np.array([[161.29,48.987936,1]])        
+        return  knn.predict(x_new)
+        
 
+         
 
     def main(self):
+        self.names = ['Height', 'Weight', 'Gender']
+        self.resultnames = ['AgeGroup']
+      
         dataseturl = "./dataset.csv"
         self.importDataset(dataseturl,self.names)
         self.importDataset(dataseturl,self.resultnames)
@@ -38,17 +47,10 @@ class Application:
 
 
 # split data using sklean
-        x_train,x_test,y_train,y_test = train_test_split(dataset,resultdataset,random_state = 0)
+        prediction = self.splitTrainingData()
 
         # K Nearest Neighborhood 
-        knn = KNeighborsClassifier(n_neighbors = 1)
-
-        knn.fit(x_train,y_train)
-
-        x_new = np.array([[161.29,48.987936,1]])
-        
-        prediction  = knn.predict(x_new)
-
+       
 
         ageGroup = np.array(['Child','Teen','Adult'])
         print(" Prediction {}".format(ageGroup[prediction]))
