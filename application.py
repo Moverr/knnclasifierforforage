@@ -36,6 +36,7 @@ def main():
     print("Result data set \n {} ".format(resultdataset[:20]))
 
     result  = knnClassifier(dataset,resultdataset)
+    print("Result : {} ".format(result))
  
  
 main()
