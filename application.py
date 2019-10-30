@@ -4,20 +4,20 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 import numpy as np
 
-dataset = ""
-resultdataset = ""
 x_train, x_test, y_train, y_test = ""
 
 def importDataset( url, names):
     dataset = pd.read_csv(url, usecols=[0, 1, 2], names=names)
+    return dataset
 
 def importResultsDataset( url, names):
     resultdataset = pd.read_csv(url, usecols=[3], names=names)
+    return resultdataset
 
 def splitTrainingData(self):
     x_train, x_test, y_train, y_test = train_test_split(dataset,resultdataset,random_state = 0)
 
-def knnClassifier(self):
+def knnClassifier():
     knn = KNeighborsClassifier(n_neighbors=1)
     knn.fit(x_train, y_train)
     x_new = np.array([[161.29, 48.987936, 1]])
