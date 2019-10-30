@@ -25,6 +25,11 @@ class Application:
         print("Let me know oaea ")
 
 
+# split data using sklean
+    from sklearn.model_selection import train_test_split
+    x_train,x_test,y_train,y_test = train_test_split(dataset,resultdataset,random_state = 0)
+
+
 
 p1 = Application()
 
