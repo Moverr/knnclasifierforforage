@@ -14,8 +14,9 @@ def importResultsDataset( url, names):
     resultdataset = pd.read_csv(url, usecols=[3], names=names)
     return resultdataset
 
-def splitTrainingData(self):
+def splitTrainingData(dataset,resultdataset):
     x_train, x_test, y_train, y_test = train_test_split(dataset,resultdataset,random_state = 0)
+    return  x_train, x_test, y_train, y_test
 
 def knnClassifier():
     knn = KNeighborsClassifier(n_neighbors=1)
@@ -28,11 +29,10 @@ def main(self):
     resultnames = ['AgeGroup']
 
     dataseturl = "./dataset.csv"
-    importDataset(dataseturl, names)
-#         importDataset(dataseturl,resultnames)
+    dataset = importDataset(dataseturl, names)
+    resultdataset =  importDataset(dataseturl,resultnames)
 
-
-#         print("Data set \n {} ".format(dataset[:10]))
+    print("Data set \n {} ".format(dataset[:10]))
 
 #         print("Result data set \n {} ".format(resultdataset[:20]))
 
