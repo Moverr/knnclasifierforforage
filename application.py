@@ -16,7 +16,8 @@ def splitTrainingData(dataset,resultdataset):
     x_train, x_test, y_train, y_test = train_test_split(dataset,resultdataset,random_state = 0)
     return  x_train, x_test, y_train, y_test
 
-def knnClassifier(x_train,y_train):
+def knnClassifier(dataset,resultdataset):
+    x_train, x_test, y_train, y_test =  splitTrainingData(dataset,resultdataset)
     knn = KNeighborsClassifier(n_neighbors=1)
     knn.fit(x_train, y_train)
     x_new = np.array([[161.29, 48.987936, 1]])
@@ -32,15 +33,12 @@ def main():
 
     print("Data set \n {} ".format(dataset[:10]))
 
-#         print("Result data set \n {} ".format(resultdataset[:20]))
+    print("Result data set \n {} ".format(resultdataset[:20]))
 
-
-#         print("Panda Version  :  {}".format(pd.__version__))
-#         print("Let me know oaea ")
-
+  
 
 # # split data using sklean
-#         prediction = splitTrainingData()
+        prediction = splitTrainingData()
 
 #         # K Nearest Neighborhood
 
