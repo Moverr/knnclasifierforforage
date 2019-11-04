@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split
 
 from sklearn.neighbors import KNeighborsClassifier
 import numpy as np
+import mglearn
 
  
 
@@ -24,6 +25,8 @@ def knnClassifier(dataset,resultdataset,newdataset):
     knn.fit(x_train, y_train)
     
     result  = knn.predict(newdataset)
+    x,y = mglearn.dataset.make_forge()
+
     # print("ASK {} ".format(y_test))
     # print("Test result : {} ".format(knn.score(y_test,x_test)))
     return result
