@@ -23,7 +23,10 @@ def knnClassifier(dataset,resultdataset,newdataset):
     knn = KNeighborsClassifier(n_neighbors=1)
     knn.fit(x_train, y_train)
     
-    return knn.predict(newdataset)
+    result  = knn.predict(newdataset)
+    # print("ASK {} ".format(y_test))
+    print("Test result : {:2f} ".format(np.mean(np.array(x_train)== np.array(y_train))))
+    return result
 
 def main():
     names = ['Height', 'Weight', 'Gender']
@@ -47,6 +50,8 @@ def main():
     newDataset = np.array([[113.665, 17.463292, 1]])
     result  = knnClassifier(dataset,resultdataset,newDataset)     
     print("Result : {} ".format(targetNames[result]))
+
+    
 
 
  
