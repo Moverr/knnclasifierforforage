@@ -27,7 +27,8 @@ def knnClassifier(dataset,resultdataset,newdataset):
     result  = knn.predict(newdataset)
     x,y = mglearn.datasets.make_forge()
 
-    mglearn.discrete_scatter(x[:,0],x[:,1],y)
+    likoo = mglearn.discrete_scatter(x[:,0],x[:,1],y)
+    print("LIKOO {}".format(likoo))
 
     # print("ASK {} ".format(y_test))
     # print("Test result : {} ".format(knn.score(y_test,x_test)))
