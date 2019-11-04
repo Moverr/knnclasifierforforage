@@ -25,7 +25,7 @@ def knnClassifier(dataset,resultdataset,newdataset):
     
     result  = knn.predict(newdataset)
     # print("ASK {} ".format(y_test))
-    print("Test result : {:2f} ".format(knn.score(y_test,x_test)))
+    # print("Test result : {} ".format(knn.score(y_test,x_test)))
     return result
 
 def main():
