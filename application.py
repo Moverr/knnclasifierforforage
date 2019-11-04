@@ -25,7 +25,9 @@ def knnClassifier(dataset,resultdataset,newdataset):
     knn.fit(x_train, y_train)
     
     result  = knn.predict(newdataset)
-    x,y = mglearn.dataset.make_forge()
+    x,y = mglearn.datasets.make_forge()
+
+    mglearn.discrete_scatter(x[:,0],x[:,1],y)
 
     # print("ASK {} ".format(y_test))
     # print("Test result : {} ".format(knn.score(y_test,x_test)))
