@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 import numpy as np
 import mglearn
+import matplotlib.pyplot as plt
 
  
 
@@ -29,6 +30,13 @@ def knnClassifier(dataset,resultdataset,newdataset):
 
     likoo = mglearn.discrete_scatter(x[:,0],x[:,1],y)
     print("LIKOO {}".format(likoo))
+
+
+    plt.legend(["Class 0", "Class 1"], loc=4)
+    plt.xlabel("First feature")
+    plt.ylabel("Second feature")
+    print("X.shape: {}".format(x.shape))
+    plt.show()
 
     # print("ASK {} ".format(y_test))
     # print("Test result : {} ".format(knn.score(y_test,x_test)))
