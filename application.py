@@ -64,8 +64,9 @@ def main():
     resultdataset =  importResultsDataset(dataseturl,resultnames)
 
 
-    X_train, X_test, y_train, y_test = train_test_split(dataset,resultdataset, random_state=0)
+    X_train, X_test, y_train, y_test = train_test_split(dataset,resultdataset, random_state=1)
 
+    print("X TRAIN SHAPE {}".format(y_train.shape))
     # print("Data set \n {} ".format(dataset[:10]))
 
     # print("Result data set \n {} ".format(resultdataset[:20]))
