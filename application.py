@@ -57,8 +57,10 @@ def main():
     X_train, X_test, y_train, y_test = train_test_split(dataset,resultdataset, random_state=0)
 
  
-    # knn  = KNeighborsClassifier(n_neighbors = 1)
-    # knn.fit(np.ravel(X_train),np.ravel(y_train))
+    knn  = KNeighborsClassifier(n_neighbors = 1)
+    xtrain = np.ravel(X_train)
+    ytrain = np.ravel(y_train)
+    knn.fit(xtrain,ytrain)
     
     # print("Data set \n {} ".format(dataset[:10]))
 
