@@ -66,12 +66,19 @@ def main():
 
     X_train, X_test, y_train, y_test = train_test_split(dataset,resultdataset, random_state=1)
 
-    print("X TRAIN SHAPE {}".format(y_train.shape))
+    print("X TRAIN SHAPE {}".format(y_test.shape))
+
+    knn  = KNeighborsClassifier(n_neighbors = 1)
+    knn.fit(X_train,y_train)
+    
     # print("Data set \n {} ".format(dataset[:10]))
 
     # print("Result data set \n {} ".format(resultdataset[:20]))
 
     newDataset = np.array([[161.29, 48.987936, 1]])
+    prediction = knn.predict(newDataset)
+    print("Prediction {}".format(prediction))
+
     # result  = knnClassifier(dataset,resultdataset,newDataset)    
     # targetNames = np.array(['child','Teen','Adult'])  
     # print("Result : {} ".format(targetNames[result]))
