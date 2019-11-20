@@ -3,13 +3,14 @@ from sklearn.model_selection import train_test_split
 
 from sklearn.neighbors import KNeighborsClassifier
 import numpy as np
-import mglearn
-import matplotlib.pyplot as plt
+ 
+# import matplotlib.pyplot as plt
 
  
 
 def importDataset( url, names):
     dataset = pd.read_csv(url, usecols=[0, 1, 2], names=names)
+    print("Data Inported {} ".format(dataset))
     return dataset
 
 def importResultsDataset( url, names):
@@ -32,11 +33,11 @@ def knnClassifier(dataset,resultdataset,newdataset):
     print("LIKOO {}".format(likoo))
 
 
-    plt.legend(["Class 0", "Class 1"], loc=4)
-    plt.xlabel("First feature")
-    plt.ylabel("Second feature")
-    print("X.shape: {}".format(x.shape))
-    plt.show()
+    # plt.legend(["Class 0", "Class 1"], loc=4)
+    # plt.xlabel("First feature")
+    # plt.ylabel("Second feature")
+    # print("X.shape: {}".format(x.shape))
+    # plt.show()
 
     # print("ASK {} ".format(y_test))
     # print("Test result : {} ".format(knn.score(y_test,x_test)))
@@ -47,23 +48,26 @@ def main():
     resultnames = ['AgeGroup']
 
     dataseturl = "./dataset.csv"
+    # import data from csv using pandas 
     dataset = importDataset(dataseturl, names)
-    resultdataset =  importResultsDataset(dataseturl,resultnames)
-
-    print("Data set \n {} ".format(dataset[:10]))
-
-    print("Result data set \n {} ".format(resultdataset[:20]))
-
-    newDataset = np.array([[161.29, 48.987936, 1]])
-    result  = knnClassifier(dataset,resultdataset,newDataset)    
-    targetNames = np.array(['child','Teen','Adult'])  
-    print("Result : {} ".format(targetNames[result]))
 
 
+    # resultdataset =  importResultsDataset(dataseturl,resultnames)
 
-    newDataset = np.array([[113.665, 17.463292, 1]])
-    result  = knnClassifier(dataset,resultdataset,newDataset)     
-    print("Result : {} ".format(targetNames[result]))
+    # print("Data set \n {} ".format(dataset[:10]))
+
+    # print("Result data set \n {} ".format(resultdataset[:20]))
+
+    # newDataset = np.array([[161.29, 48.987936, 1]])
+    # result  = knnClassifier(dataset,resultdataset,newDataset)    
+    # targetNames = np.array(['child','Teen','Adult'])  
+    # print("Result : {} ".format(targetNames[result]))
+
+
+
+    # newDataset = np.array([[113.665, 17.463292, 1]])
+    # result  = knnClassifier(dataset,resultdataset,newDataset)     
+    # print("Result : {} ".format(targetNames[result]))
 
     
 
