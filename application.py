@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 
 from sklearn.neighbors import KNeighborsClassifier
 import numpy as np
- 
+  
 # import matplotlib.pyplot as plt
 
 
@@ -64,9 +64,9 @@ def main():
 
     # print("Result data set \n {} ".format(resultdataset[:20]))
 
-    newDataset = np.array([[161.29, 48.987936, 1]])
-    prediction = knn.predict(newDataset)
-    # print("Prediction {}".format(prediction.shape))
+    # newDataset = np.array([[161.29, 48.987936, 1]])
+    # prediction = knn.predict(newDataset)
+    # # print("Prediction {}".format(prediction.shape))
 
     # result  = knnClassifier(dataset,resultdataset,newDataset)    
     # targetNames = np.array(['child','Teen','Adult'])  
