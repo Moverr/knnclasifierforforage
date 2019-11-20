@@ -53,8 +53,8 @@ def main():
     # import data from csv using pandas 
     dataset = importDataset(dataseturl, names)
  
-    # resultdataset =  importResultsDataset(dataseturl,resultnames)
-    # X_train, X_test, y_train, y_test = train_test_split(dataset,resultdataset, random_state=0)
+    resultdataset =  importResultsDataset(dataseturl,resultnames)
+    X_train, X_test, y_train, y_test = train_test_split(dataset,resultdataset, random_state=0)
 
  
     # knn  = KNeighborsClassifier(n_neighbors = 1)
