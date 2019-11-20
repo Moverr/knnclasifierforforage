@@ -10,11 +10,13 @@ import numpy as np
 
 def importDataset( url, names):
     dataset = pd.read_csv(url, usecols=[0, 1, 2], names=names)
-    print("Data Inported {} ".format(dataset))
+    print("Data Inported \n {} ".format(dataset.head(5)))
     return dataset
 
 def importResultsDataset( url, names):
     resultdataset = pd.read_csv(url, usecols=[3], names=names)
+    print("Result Sets \n {} ".format(resultdataset.head(5)))
+    
     return resultdataset
 
 def splitTrainingData(dataset,resultdataset):
@@ -52,7 +54,7 @@ def main():
     dataset = importDataset(dataseturl, names)
 
 
-    # resultdataset =  importResultsDataset(dataseturl,resultnames)
+    resultdataset =  importResultsDataset(dataseturl,resultnames)
 
     # print("Data set \n {} ".format(dataset[:10]))
 
