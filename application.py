@@ -58,17 +58,19 @@ def main():
 
  
     knn  = KNeighborsClassifier(n_neighbors = 1)
-    xtrain = np.ravel(X_train)
-    ytrain = np.ravel(y_train)
-    knn.fit(xtrain,ytrain)
+    # xtrain = np.ravel(X_train)
+    # ytrain = np.ravel(y_train)
+     
     
-    # print("Data set \n {} ".format(dataset[:10]))
+    knn.fit(X_train,y_train)
+    
+    print("Data set \n {} ".format(dataset[:10]))
 
     # print("Result data set \n {} ".format(resultdataset[:20]))
 
-    # newDataset = np.array([[161.29, 48.987936, 1]])
-    # prediction = knn.predict(newDataset)
-    # # print("Prediction {}".format(prediction.shape))
+    newDataset = np.array([[161.29, 48.987936, 1]])
+    prediction = knn.predict(newDataset)
+    print("Prediction {}".format(prediction))
 
     # result  = knnClassifier(dataset,resultdataset,newDataset)    
     # targetNames = np.array(['child','Teen','Adult'])  
