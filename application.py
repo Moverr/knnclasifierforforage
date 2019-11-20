@@ -70,7 +70,15 @@ def main():
 
     newDataset = np.array([[161.29, 48.987936, 1]])
     prediction = knn.predict(newDataset)
-    print("Prediction {}".format(prediction))
+    print("Prediction {}".format(y_test))
+
+
+    print("-----------------------------------------\n")
+    
+    print("Test Score: {}".format(np.mean(prediction == y_test)))
+    print("Test Score: {}".format(knn.score(X_test , y_test)))
+    
+
 
     # result  = knnClassifier(dataset,resultdataset,newDataset)    
     # targetNames = np.array(['child','Teen','Adult'])  
