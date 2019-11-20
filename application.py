@@ -14,12 +14,10 @@ from sklearn.neighbors import KNeighborsClassifier
 
 def importDataset( url, names):
     dataset = pd.read_csv(url, usecols=[0, 1, 2], names=names)
-    # print("Data Inported \n {} ".format(dataset.head(5)))
     return dataset
 
 def importResultsDataset( url, names):
     resultdataset = pd.read_csv(url, usecols=[3], names=names)
-    # print("Result Sets \n {} ".format(resultdataset.head(5))) 
     return resultdataset
 
 def splitTrainingData(dataset,resultdataset):
@@ -35,8 +33,7 @@ def knnClassifier(dataset,resultdataset,newdataset):
     x,y = mglearn.datasets.make_forge()
 
     likoo = mglearn.discrete_scatter(x[:,0],x[:,1],y)
-    # print("LIKOO {}".format(likoo))
-
+   
 
     # plt.legend(["Class 0", "Class 1"], loc=4)
     # plt.xlabel("First feature")
@@ -55,20 +52,13 @@ def main():
     dataseturl = "./dataset.csv"
     # import data from csv using pandas 
     dataset = importDataset(dataseturl, names)
+ 
+    # resultdataset =  importResultsDataset(dataseturl,resultnames)
+    # X_train, X_test, y_train, y_test = train_test_split(dataset,resultdataset, random_state=0)
 
-
-
-
-
-    resultdataset =  importResultsDataset(dataseturl,resultnames)
-
-
-    X_train, X_test, y_train, y_test = train_test_split(dataset,resultdataset, random_state=0)
-
-    # print("X TRAIN SHAPE {}".format(X_train))
-
-    knn  = KNeighborsClassifier(n_neighbors = 1)
-    knn.fit(np.ravel(X_train),np.ravel(y_train))
+ 
+    # knn  = KNeighborsClassifier(n_neighbors = 1)
+    # knn.fit(np.ravel(X_train),np.ravel(y_train))
     
     # print("Data set \n {} ".format(dataset[:10]))
 
