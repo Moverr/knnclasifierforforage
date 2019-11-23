@@ -10,6 +10,8 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
+from sklearn.linear_model import LinearRegression
+
 
 
 def importDataset( url, names):
@@ -57,7 +59,7 @@ def main():
     X_train, X_test, y_train, y_test = train_test_split(dataset,resultdataset, random_state=0)
 
  
-    knn  = KNeighborsClassifier(n_neighbors = 1)
+    knn  = KNeighborsClassifier(n_neighbors = 3)
     # xtrain = np.ravel(X_train)
     # ytrain = np.ravel(y_train)
      
@@ -70,7 +72,7 @@ def main():
 
     newDataset = np.array([[161.29, 48.987936, 1]])
     prediction = knn.predict(newDataset)
-    print("Prediction {}".format(y_test))
+    print("Prediction {}".format(prediction))
 
 
     print("-----------------------------------------\n")
