@@ -15,4 +15,5 @@ from sklearn.linear_model import LinearRegression
 from sklearn.datasets import load_breast_cancer
 
 cancer = load_breast_cancer()
-print("{}".format(cancer))
+# print("{}".format(cancer))
+x_train,x_test,y_train, y_test = train_test_split(cancer.data,cancer.target,stratify=cancer.target,random_state= 42)
