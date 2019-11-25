@@ -8,7 +8,7 @@ cancer = load_breast_cancer()
 x_train,x_test,y_train, y_test = train_test_split(cancer.data,cancer.target,stratify=cancer.target,random_state= 42)\
 
 
-tree = DecisionTreeClassifier(random_state=0)
+tree = DecisionTreeClassifier(random_state=0,max_depth=4)
 tree.fit(x_train,y_train)
 
 print("Accurancy of the Classifier {} \n :".format(tree.score(x_train,y_train)))
