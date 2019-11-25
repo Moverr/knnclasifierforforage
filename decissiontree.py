@@ -11,4 +11,5 @@ x_train,x_test,y_train, y_test = train_test_split(cancer.data,cancer.target,stra
 tree = DecisionTreeClassifier(random_state=0)
 tree.fit(x_train,y_train)
 
-print("Accurancy of the Classifier {} :".format(tree.score(x_train,y_train)))
+print("Accurancy of the Classifier {} \n :".format(tree.score(x_train,y_train)))
+print(" Accurancy on Training Test {} ]\n ".format(tree.score(x_test,y_test)))
